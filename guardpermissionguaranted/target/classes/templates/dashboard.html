@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/dash.css}">
+  
+</head>
+<body>
+
+  <header th:fragment="menu">
+    <h1>Admin Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a th:href="@{/showSignup}">Users</a></li>
+        <li><a th:href="@{/leaves}">Leaves</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="content">
+    <h2>Welcome, Admin!</h2>
+    <div class="stats">
+      <div class="stat-box">
+        <h3>Total Users</h3>
+        <p th:text="${totalUser}"></p>
+      </div>
+      <div class="stat-box">
+        <h3>Total Products</h3>
+        <p>1000</p>
+      </div>
+      
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 National Security All rights reserved.</p>
+  </footer>
+</body>
+</html>

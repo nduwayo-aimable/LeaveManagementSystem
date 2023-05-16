@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/dash.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/userTable.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" 
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+  
+
+    
+  <title>Beautiful Table</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+ 
+</head>
+<body>
+    <div th:replace="dashboard :: menu"></div>
+    <h3 class="text-center mt-3">List Of All User</h3>
+  <table class="beautiful-table">
+    <thead>
+      <tr>
+        
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Location</th>
+        
+        <th colspan="2">Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="data: ${Signup}">
+        <td th:text="${data.username}"></td>
+        <td th:text="${data.email}"></td>
+        <td th:text="${data.gender}"></td>
+        <td th:text="${data.location}"></td>
+        <td><a th:href="@{/delete/{id}(id=${data.user_id})}" class="btn btn-danger btn-lg"><span><i class="bi bi-trash"></i></span></a></td>
+        <td><a th:href="@{/udateSignup/{id}(id=${data.user_id})}" class="btn btn-success btn-lg"><span><i class="bi bi-pencil-square"></i></span></a></td>
+        
+        
+       
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+</body>
+</html>

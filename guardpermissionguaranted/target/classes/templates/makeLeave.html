@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>make a leave</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" 
+  crossorigin="anonymous">
+</head>
+<body>
+    <h3 class="text-center text-muted mt-5 ">suggest a leave</h3>
+    <form th:action="@{/createLeave}" method="post" >
+        <div class="container bg-light w-25 shadow-lg p-4">
+            <input type="hidden" name="guard_id">
+            <label for="go">when to leave:</label>
+            <input type="date" class="form-control" name="leavedate" id="go">
+            <label for="back">when to get back:</label>
+            <input type="date" class="form-control" name="backdate" id="back">
+            <label for="reason">reason:</label>
+            <input type="text" class="form-control" name="reason" id="reason">
+            <input type="submit" class="btn btn-block btn-dark mt-3" name="reason" id="reason">
+    
+        </div>
+    </form>
+   
+</body>
+</html>

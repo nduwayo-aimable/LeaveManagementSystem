@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Landing Page</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome <span th:text="${session.name}"></span></h1>
+      <p>Make an apropriete leave!</p>
+    </div>
+    <div class="content">
+      <h2>About Me</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque dignissim, ligula at faucibus pellentesque, nunc odio
+        sollicitudin orci, non vestibulum risus ex vitae odio.
+      </p>
+      <a th:href="@{suggesLeave}" class="btn">Get Started</a>
+    </div>
+    <div class="footer">
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

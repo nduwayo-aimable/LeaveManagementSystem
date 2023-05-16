@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up Page</title>
+  <style>
+    /* CSS code goes here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    
+    .signup-button {
+      display: block;
+      width: 80%;
+      padding: 10px;
+      text-align: center;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+    <form th:action="@{/saveSignup}" method="post" th:object="${data}">
+      <input type="hidden" name="user_id" th:value="${data.user_id}">
+      <input type="text" name="username" placeholder="Username" th:value="${data.username}" required>
+      <input type="email" name="email" placeholder="Email" th:value="${data.email}"  required>
+      
+      <select name="gender">
+        <option value="" disabled selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="text" name="location" placeholder="Location" th:value="${data.location}"  required>
+      <input type="password" name="password" placeholder="Password" th:value="${data.password}"  required>
+      <button type="submit" class="signup-button">Sign Up</button>
+      <a th:href="@{/login}" style="text-decoration: none;color: blue; font-size: 20px;">Login!</a>
+    </form>
+  </div>
+</body>
+</html>
